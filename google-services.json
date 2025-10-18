@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "3716512213",
+    "project_id": "practica01dsm",
+    "storage_bucket": "practica01dsm.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3716512213:android:416f05a904fb5b8b3d255c",
+        "android_client_info": {
+          "package_name": "com.vadesan.practica01dsm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEtcdr7p7xxXwyJA9TJmvLSTjkq8_7cYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
