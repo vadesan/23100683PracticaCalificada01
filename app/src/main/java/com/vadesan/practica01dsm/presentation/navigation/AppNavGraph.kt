@@ -13,12 +13,14 @@ import com.vadesan.practica01dsm.presentation.home.HomeScreen
 fun AppNavGraph(){
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "login")
+    NavHost(navController = navController, startDestination = "home")
     {
         composable(route = "login") { LoginScreen(navController) }
         composable(route = "register") { RegisterScreen(navController) }
         composable(route = "home") {
-            HomeScreen(navController)
+            DrawerScaffold(navController) {
+                HomeScreen(navController)
+            }
         }
     }
 }

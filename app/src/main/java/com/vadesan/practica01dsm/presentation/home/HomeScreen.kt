@@ -36,6 +36,8 @@ fun HomeScreen(navController: NavController){
     var destinyCurrency by remember { mutableStateOf("") }
     var resultAmount by remember { mutableStateOf("") }
 
+    val context = LocalContext.current
+
     Column (
         modifier = Modifier.padding(16.dp),
     ) {
@@ -85,7 +87,17 @@ fun HomeScreen(navController: NavController){
                     && originCurrency.isNotBlank()
                     && destinyCurrency.isNotBlank()
                 ){
-                    resultAmount = "$amount $originCurrency equivalen  a $destinyCurrency"
+                    CoroutineScope(Dispatchers.Main).launch {
+                        val result = FirebaseAuthManager.registerOperation(originCurrency, destinyCurrency, amount.toDouble(), 0.0)
+                        if (!result.isSuccess) {
+                            val error = result.exceptionOrNull()?.message?: "Error desconocido"
+                            Toast.makeText(context
+                                , error
+                                , Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    resultAmount = "$amount $originCurrency equivalen a  $destinyCurrency"
                 }
             },
             modifier = Modifier.padding(vertical = 8.dp).fillMaxWidth()
