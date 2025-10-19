@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.vadesan.practica01dsm.presentation.navigation.AppNavGraph
 import com.vadesan.practica01dsm.ui.theme.Practica01DSMTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,7 +20,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Practica01DSMTheme {
-                Text("Practica calificada 01 - DSM")
+                AppNavGraph()
             }
         }
     }
